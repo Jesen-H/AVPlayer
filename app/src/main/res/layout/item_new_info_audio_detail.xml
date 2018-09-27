@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/VI"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/new_info_audio_back"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center" />
+
+        <RelativeLayout
+            android:id="@+id/new_info_audio_state"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:background="@drawable/icon_new_info_audio_static"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/audio_frequency"
+                android:src="@drawable/icon_new_info_audio_static"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/audio_play_state"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/new_info_audio_play_status" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/color_new_info_audio_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/new_info_audio_time_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:maxHeight="3dp"
+                android:minHeight="3dp"
+                android:progressDrawable="@drawable/audio_progress_video"
+                android:thumbOffset="0dip"
+                android:thumb="@drawable/circle_pink" />
+
+            <TextView
+                android:id="@+id/new_info_audio_time_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

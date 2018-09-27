@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <com.hgeson.circleprogressview.view.CircleProgressView
+            android:id="@+id/circle1"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:radius="60dp"
+            app:unringColor="@color/line_color"
+            app:ringColor="@color/VI"/>
+
+        <com.hgeson.circleprogressview.view.CircleProgressView
+            android:layout_alignParentRight="true"
+            android:id="@+id/circle2"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:radius="60dp"
+            app:typeSymbol="%"
+            app:txtColor="@color/color_tool_line_chart"
+            app:bottomtxtColor="@color/textColor_9"
+            app:bottomtxt="自定义文字"
+            app:currentProgress="66"
+            app:unringColor="@color/line_color"
+            app:ringColor="@color/color_pay_sum"/>
+
+        <com.hgeson.circleprogressview.view.CircleProgressView
+            android:layout_alignParentBottom="true"
+            android:id="@+id/circle3"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:radius="60dp"
+            app:currentProgress="35"
+            app:strokeWidth="10dp"
+            app:unstrokeWidth="5dp"
+            app:bottomtxt="自定义文字"
+            app:bottomtxtColor="@color/textColor_9"
+            app:unringColor="@color/line_color"
+            app:ringColor="@color/VI"/>
+
+        <com.hgeson.circleprogressview.view.CircleProgressView
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/circle4"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:radius="60dp"
+            app:isabove="true"
+            app:strokeWidth="5dp"
+            app:unstrokeWidth="5dp"
+            app:bottomtxt="自定义文字"
+            app:bottomtxtColor="@color/color_pay_sum"
+            app:unringColor="@color/line_color"
+            app:txtColor="@color/color_new_info_audio"
+            app:ringColor="@color/VI"/>
+
+</RelativeLayout>
+

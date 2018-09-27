@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:tabBackground="@drawable/selected_tab_bg"
+        app:tabIndicatorColor="@color/VI"
+        app:tabIndicatorHeight="1dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/VI" />
+
+    <com.hgeson.avplayer.view.CustomViewPager
+        android:layout_marginTop="1dp"
+        android:id="@+id/vp_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+</LinearLayout>

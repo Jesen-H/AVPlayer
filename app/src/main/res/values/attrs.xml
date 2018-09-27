@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleWaterView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="firstWaveColor" format="color" />
+        <attr name="secondWaveColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="btmtextColor" format="color" />
+        <attr name="waveSize" format="dimension" />
+        <attr name="waterProgress" format="integer" />
+        <!-- 10 到 50之间比较合适-->
+        <attr name="amplitude" format="integer" />
+        <!-- 1 到 6 之间比较合适 -->
+        <attr name="speed" format="integer" />
+        <attr name="circleTxt" format="string"/>
+        <attr name="hidetxt" format="boolean"/>
+        <attr name="typeSymbl" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressView">
+        <attr name="radius" format="dimension"/>
+
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="unstrokeWidth" format="dimension"/>
+
+        <attr name="ringColor" format="color"/>
+        <attr name="unringColor" format="color"/>
+
+        <attr name="txtColor" format="color"/>
+        <attr name="bottomtxtColor" format="color"/>
+
+        <attr name="bottomtxt" format="string"/>
+        <attr name="typeSymbol" format="string"/>
+
+        <attr name="currentProgress" format="integer"/>
+
+        <attr name="isabove" format="boolean"/>
+    </declare-styleable>
+
+</resources>

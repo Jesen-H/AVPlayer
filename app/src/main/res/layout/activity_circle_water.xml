@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hgeson.circleprogressview.view.CircleWaterView
+        android:layout_centerInParent="true"
+        android:id="@+id/water_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:waveSize="160dp"
+        app:typeSymbl="%"
+        app:hidetxt="false"
+        app:amplitude="30"
+        app:speed="2"
+        app:circleTxt="自定义文字"
+        app:backgroundColor="#9cd1f9"
+        app:firstWaveColor="#ABDBFF"
+        app:secondWaveColor="#bfe5fd" />
+
+</RelativeLayout>
