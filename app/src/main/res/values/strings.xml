@@ -9,4 +9,7 @@
     <string name="start_record">开始录音</string>
     <string name="stop_record">停止录音</string>
     <string name="play_fail_for_not_exist">播放失败，视频文件不存在！</string>
+    <string name="full_show">全屏显示</string>
+    <string name="small_show">缩小显示</string>
+    <string name="back_top">回到顶部</string>
 </resources>

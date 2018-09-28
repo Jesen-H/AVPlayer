@@ -55,7 +55,7 @@ public class AudioFragment extends BaseFragment {
         recycierView.setAdapter(adapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_recycler, null) {
             @Override
             protected void convert(BaseViewHolder helper, String item) {
-                helper.setText(R.id.tv, item);
+                helper.setText(R.id.tv, item).addOnClickListener(R.id.tv_message_delete);
             }
         });
         adapter.addData(list);
@@ -63,7 +63,24 @@ public class AudioFragment extends BaseFragment {
 
     @Override
     protected void setListeners() {
+        adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                switch (view.getId()){
+                    case R.id.tv_message_delete:
+                        adapter.remove(position);
+                        break;
+                }
+            }
+        });
+    }
 
+    @Override
+    public void onEvent(String str) {
+        super.onEvent(str);
+        if (str.equals(getString(R.string.back_top))){
+            recycierView.smoothScrollToPosition(0);
+        }
     }
 
     @Override

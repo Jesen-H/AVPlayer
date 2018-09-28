@@ -68,7 +68,7 @@ public class VideoFragment extends BaseFragment implements NetEvent{
         recycierView.setAdapter(adapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_recycler, null) {
             @Override
             protected void convert(BaseViewHolder helper, String item) {
-                helper.setText(R.id.tv, item);
+                helper.setText(R.id.tv, item).addOnClickListener(R.id.tv_message_delete);
             }
         });
         adapter.addData(list);
@@ -82,7 +82,7 @@ public class VideoFragment extends BaseFragment implements NetEvent{
                 if (getActivity().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                     recycierView.setVisibility(View.VISIBLE);
-                    EventUtil.post("缩小显示");
+                    EventUtil.post(getString(R.string.small_show));
                     setSize(false);
                     videoPlayer.setImageFull(R.mipmap.new_info_all_window);
                 }
@@ -93,13 +93,13 @@ public class VideoFragment extends BaseFragment implements NetEvent{
                 if (getActivity().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                     recycierView.setVisibility(View.VISIBLE);
-                    EventUtil.post("缩小显示");
+                    EventUtil.post(getString(R.string.small_show));
                     videoPlayer.setImageFull(R.mipmap.new_info_all_window);
                     setSize(false);
                 } else if (getActivity().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
                     getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                     recycierView.setVisibility(View.GONE);
-                    EventUtil.post("全屏显示");
+                    EventUtil.post(getString(R.string.full_show));
                     videoPlayer.setImageFull(R.mipmap.small_full);
                     setSize(true);
                 }
@@ -115,6 +115,25 @@ public class VideoFragment extends BaseFragment implements NetEvent{
 
             }
         });
+
+        adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                switch (view.getId()){
+                    case R.id.tv_message_delete:
+                        adapter.remove(position);
+                        break;
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onEvent(String str) {
+        super.onEvent(str);
+        if (str.equals(getString(R.string.back_top))){
+            recycierView.smoothScrollToPosition(0);
+        }
     }
 
     @Override
