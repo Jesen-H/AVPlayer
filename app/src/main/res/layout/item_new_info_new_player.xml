@@ -82,6 +82,7 @@
                 android:maxHeight="3dp"
                 android:minHeight="3dp"
                 android:progressDrawable="@drawable/audio_progress_video"
+                android:thumbOffset="0dip"
                 android:thumb="@drawable/circle_pink" />
 
             <LinearLayout
