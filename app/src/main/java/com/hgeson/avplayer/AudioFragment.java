@@ -1,5 +1,8 @@
 package com.hgeson.avplayer;
 
+import android.Manifest;
+import android.content.Intent;
+import android.media.AudioRecord;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +13,7 @@ import android.view.ViewGroup;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.hgeson.avplayer.base.BaseFragment;
+import com.hgeson.avplayer.utils.PermissionUtils;
 import com.hgeson.avplayer.view.AudioPlayView;
 
 import java.util.ArrayList;
@@ -55,7 +59,7 @@ public class AudioFragment extends BaseFragment {
         recycierView.setAdapter(adapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_recycler, null) {
             @Override
             protected void convert(BaseViewHolder helper, String item) {
-                helper.setText(R.id.tv, item).addOnClickListener(R.id.tv_message_delete);
+                helper.setText(R.id.tv, item).addOnClickListener(R.id.tv_message_delete).addOnClickListener(R.id.content);
             }
         });
         adapter.addData(list);
@@ -69,6 +73,15 @@ public class AudioFragment extends BaseFragment {
                 switch (view.getId()){
                     case R.id.tv_message_delete:
                         adapter.remove(position);
+                        break;
+                    case R.id.content:
+                        if (PermissionUtils.initPermissions(getActivity(),new String[]{
+                                Manifest.permission.RECORD_AUDIO,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE},
+                                new String[]{"录音","存储","读取"})){
+                            startActivity(new Intent(getActivity(), AudioRecordActivity.class));
+                        }
                         break;
                 }
             }
@@ -100,6 +113,8 @@ public class AudioFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        audioView.release();
+        if (audioView != null) {
+            audioView.release();
+        }
     }
 }

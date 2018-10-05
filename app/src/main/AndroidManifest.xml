@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>   
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 
     <application
@@ -26,6 +28,7 @@
         <activity android:name=".VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name=".AudioActivity" />
+        <activity android:name=".AudioRecordActivity"/>
     </application>
 
 </manifest>

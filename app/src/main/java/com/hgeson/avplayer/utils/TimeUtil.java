@@ -108,10 +108,10 @@ public class TimeUtil {
     public static String showTimeCount(long time) {
         String s = null;
         if (time <= 59) {
-            s = "00:";
+            s = "00:00:";
             return time < 10 ? s + "0" + String.valueOf(time) : s + String.valueOf(time);
         } else {
-            return (time % 60 < 10 ? s + "0" + String.valueOf(time) : s + String.valueOf(time)) + ":" + (time / 60 < 10 ? s + "0" + String.valueOf(time) : s + String.valueOf(time));
+            return "00:" + (time % 60 < 10 ? s + "0" + String.valueOf(time) : s + String.valueOf(time)) + ":" + (time / 60 < 10 ? s + "0" + String.valueOf(time) : s + String.valueOf(time));
         }
     }
 
