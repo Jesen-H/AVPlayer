@@ -1,2 +1,4 @@
 # AVPlayer
-音频(MeidaPlay) + 视频(TextureView + MediaPlayer)播放器
+### 1.音频播放器(MeidaPlay)
+### 2.视频播放器(TextureView + MediaPlayer)
+### 3.录音功能(MediaRecorder)
